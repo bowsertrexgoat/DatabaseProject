@@ -24,7 +24,8 @@ data = {"items": [
 	"SERIAL ID": "LDR444",
 	"LAST CALIBRATION DATE": "7/5/24",
 	"CALIBRATION DUE DATE": "11/5/24"
-	}]
+	}],
+	"ID incrementer": 4
 } 
 with open("C:\\Users\\frisc\\OneDrive\\Desktop\\ShivProjects\\DatabaseProject\\randomData.json", "w") as file:
 	json.dump(data,file,indent=2)

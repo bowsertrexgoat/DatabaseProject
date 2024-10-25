@@ -1,10 +1,9 @@
 import json
 import os
 
-def organize(data):
-    for key in data.values():
-        for item in key:
-            print(item)
+def organize(dataList):
+    for item in dataList:
+        print(item)
     return
 
 def writeItemToDB(data,maxLength):
@@ -19,40 +18,58 @@ def writeItemToDB(data,maxLength):
         "LAST CALIBRATION DATE": lastCalibrationDate,
         "CALIBRATION DUE DATE": calibrationDueDate
             })
+    maxLength += 1
+    data["ID incrementer"] = maxLength
     with open("C:\\Users\\frisc\\OneDrive\\Desktop\\ShivProjects\\DatabaseProject\\randomData.json", "w") as file:
         json.dump(data,file,indent=2)
     print("SUCESS!")
 
-def removeItemByNameFromDB(data):
+def removeItemByNameFromDB(data,dataList):
     name = input("TYPE THE NAME OF THE ITEM YOU WANT TO REMOVE: ")
-    for list in data.values():
-           for item in list:
-                if item["NAME"] == name:
-                     list.remove(item)
-                     with open("C:\\Users\\frisc\\OneDrive\\Desktop\\ShivProjects\\DatabaseProject\\randomData.json", "w") as file:
-                         json.dump(data,file,indent=2)
-                     print("SUCESS!")
-                     return
+    for item in dataList:
+        if item["NAME"] == name:
+            dataList.remove(item)
+            data['items'] = dataList
+            with open("C:\\Users\\frisc\\OneDrive\\Desktop\\ShivProjects\\DatabaseProject\\randomData.json", "w") as file:
+                json.dump(data,file,indent=2)
+            print("SUCESS!")
+            return
     print(f"ITEM {name} NOT FOUND...")
+
+def searchByName(dataList):
+    name = input("TYPE THE NAME OF THE ITEM YOU WANT SEARCH FOR: ")
+    for item in dataList:
+        if item["NAME"] == name:
+            print(item)
+    print("")
+    return
 
 def quit():
      os.system('cls')
 
-maxLength = 0
+os.system('cls')
 while True:
-    query = input("TYPE 1 TO VIEW DATA, TYPE 2 TO ADD ITEM, TYPE 3 TO REMOVE AN ITEM BY NAME, TYPE 4 TO QUIT: ")
+    query = input("TYPE 1 TO VIEW DATA, TYPE 2 TO ADD ITEM, TYPE 3 TO REMOVE AN ITEM BY NAME, TYPE 4 TO SEARCH, TYPE 5 TO QUIT: ")
     with open ("randomData.json","r") as file:
                 data = json.load(file)
-                if len(data["items"]) > maxLength:
-                     maxLength = len(data["items"])
+    maxLength = data["ID incrementer"]
+    dataList = data["items"]
+
+    try:
+      int(query)   
+    except:
+        continue
+    
     match int(query):
         case 1:
-            organize(data)
+            organize(dataList)
         case 2:
             writeItemToDB(data,maxLength)
         case 3:
-            removeItemByNameFromDB(data)
+            removeItemByNameFromDB(data,dataList)
         case 4:
+            searchByName(dataList)
+        case 5:
             quit()
             break
     print("")

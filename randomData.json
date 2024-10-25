@@ -1,18 +1,47 @@
 {
   "items": [
     {
-      "ID": 5,
-      "NAME": "LOL",
-      "SERIAL ID": "8043178",
-      "LAST CALIBRATION DATE": "4/3/4",
-      "CALIBRATION DUE DATE": "4/3/6"
+      "ID": 0,
+      "NAME": "Mayo Duct",
+      "SERIAL ID": "ABC-123",
+      "LAST CALIBRATION DATE": "10/10/24",
+      "CALIBRATION DUE DATE": "4/10/25"
     },
     {
       "ID": 1,
-      "NAME": "HFWDFWQEKU",
-      "SERIAL ID": "43192919321",
-      "LAST CALIBRATION DATE": "9/3/4",
-      "CALIBRATION DUE DATE": "9/3/5"
+      "NAME": "Char Pip",
+      "SERIAL ID": "PIP-447",
+      "LAST CALIBRATION DATE": "3/10/24",
+      "CALIBRATION DUE DATE": "7/10/24"
+    },
+    {
+      "ID": 2,
+      "NAME": "Biff Buffer",
+      "SERIAL ID": "BUFF-777",
+      "LAST CALIBRATION DATE": "12/1/23",
+      "CALIBRATION DUE DATE": "12/1/24"
+    },
+    {
+      "ID": 3,
+      "NAME": "Dryder",
+      "SERIAL ID": "LDR444",
+      "LAST CALIBRATION DATE": "7/5/24",
+      "CALIBRATION DUE DATE": "11/5/24"
+    },
+    {
+      "ID": 5,
+      "NAME": "D",
+      "SERIAL ID": "4321",
+      "LAST CALIBRATION DATE": "2/2/2",
+      "CALIBRATION DUE DATE": "3/3/3"
+    },
+    {
+      "ID": 7,
+      "NAME": "D",
+      "SERIAL ID": "9084321",
+      "LAST CALIBRATION DATE": "2/4/3",
+      "CALIBRATION DUE DATE": "4/6/1"
     }
-  ]
+  ],
+  "ID incrementer": 8
 }
